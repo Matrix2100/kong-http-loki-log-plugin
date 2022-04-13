@@ -2,7 +2,7 @@
 servroot
 
 # packed distribution format for LuaRocks
-*.rock
+# *.rock
 # exclude Pongo shell history
 .pongo/.ash_history
 # exclude LuaCov statistics file
