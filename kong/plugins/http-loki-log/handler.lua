@@ -133,8 +133,8 @@ local function get_queue_id(conf)
 end
 
 local function format_body_loki(body)
-  kong.log.debug('{"streams": [{ "producao": { "foo": "bar2" }, "values": [' .. concat(body) .. '] }]}')
-  return '{"streams": [{ "producao": { "foo": "bar2" }, "values": [' .. concat(body) .. '] }]}'
+  kong.log.debug('{"streams": [{ "producao": { "foo": "bar2" }, "values": [' .. (body) .. '] }]}')
+  return '{"streams": [{ "producao": { "foo": "bar2" }, "values": [' .. (body) .. '] }]}'
 end
 
 -- '{"streams": [{ "stream": { "foo": "bar2" }, "values": [ [ "1570818238000000000", "fizzbuzz" ] ] }]}'
