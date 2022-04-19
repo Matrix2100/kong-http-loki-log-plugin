@@ -132,7 +132,7 @@ local function get_queue_id(conf)
     conf.flush_timeout)
 end
 
--- {streams = {{ producao = { foo = "bar2" }, values = { body } }}} -- JEITO CERTO DE FAZER. By DoBug
+-- {streams = {{ producao = { foo = "bar2" }, values = { body } }}} -- JEITO CERTO DE FAZER. By Dobug
 
 local function format_body_loki(body)
   kong.log.debug('{"streams": [{ "producao": { "foo": "bar2" }, "values": [' .. (body) .. '] }]}')
