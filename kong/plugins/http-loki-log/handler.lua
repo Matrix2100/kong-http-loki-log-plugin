@@ -135,11 +135,12 @@ end
 -- {streams = {{ producao = { foo = "bar2" }, values = { body } }}} -- JEITO CERTO DE FAZER. By Dobug
 
 local function format_body_loki(body)
-  kong.log.debug('{"streams": [{ "producao": { "foo": "bar2" }, "values": [' .. (body) .. '] }]}')
-  return '{"streams": [{ "producao": { "foo": "bar2" }, "values": [' .. (body) .. '] }]}'
+  local request_body = {streams = {{ conf.stream_name = { job = conf.job_name }, values = { body } }}}
+  kong.log.debug(request_body)
+  return request_body
 end
 
--- '{"streams": [{ "stream": { "foo": "bar2" }, "values": [ [ "1570818238000000000", "fizzbuzz" ] ] }]}'
+-- {"streams": [{ "stream": { "foo": "bar2" }, "values": [ [ "1570818238000000000", "fizzbuzz" ] ] }]}'
 function plugin:log(conf)
   if conf.custom_fields_by_lua then
     local set_serialize_value = kong.log.set_serialize_value

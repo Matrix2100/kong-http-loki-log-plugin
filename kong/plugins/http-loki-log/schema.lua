@@ -14,6 +14,8 @@ return {
         { http_endpoint = typedefs.url({ required = true, encrypted = true }) }, -- encrypted = true is a Kong-Enterprise exclusive feature, does nothing in Kong CE
         { method = { type = "string", default = "POST", one_of = { "POST", "PUT", "PATCH" }, }, },
         { content_type = { type = "string", default = "application/json", one_of = { "application/json" }, }, },
+        { stream_name = { type = "string", default = "nome da stream" }, },
+        { job_name = { type = "string", default = "nome do job" }, },
         { timeout = { type = "number", default = 10000 }, },
         { keepalive = { type = "number", default = 60000 }, },
         { retry_count = { type = "integer", default = 10 }, },
